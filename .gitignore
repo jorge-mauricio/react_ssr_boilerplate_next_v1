@@ -11,8 +11,6 @@
 #Webpack distribution directory (check if it´s not necessary, when publishing).
 #dist
 
-#Set up files.
-setup
 
 #Backup directories.
 root_node_backup

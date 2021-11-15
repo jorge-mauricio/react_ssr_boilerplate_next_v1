@@ -1,0 +1,19 @@
+{
+  "name": "react-ssr-boiler-plate-challenge-v1",
+  "version": "1.0.0",
+  "description": "React server side rendering boilerplate.",
+  "author": "Jorge Mauricio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorge-mauricio/react-ssr-boiler-plate-challenge-v1/issues"
+  },
+  "homepage": "https://github.com/jorge-mauricio/react-ssr-boiler-plate-challenge-v1#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorge-mauricio/react-ssr-boiler-plate-challenge-v1.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
