@@ -5,7 +5,7 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
+        "plugin:react/extends", // recommended | extends
         "google"
     ],
     "parser": "@typescript-eslint/parser",
@@ -20,5 +20,13 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "max-len": ["warn", {"code": 2000, "ignoreUrls": true}],
+      "comma-dangle": ["error", {
+        "arrays": "never",
+        "objects": "always",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }]
     }
 }
