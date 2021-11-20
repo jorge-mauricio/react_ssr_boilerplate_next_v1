@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 // import Link from 'next/link';
 
 // Components.
 import LayoutFrontendMain from '../app_views/layout-frontend-main-cb-component.js';
 
 
-class FrontendHome extends Component {
+class FrontendHome extends React.Component {
   // Constructor.
   // **************************************************************************************
   constructor(props, context) {
