@@ -13,22 +13,20 @@
 
 
 #Backup directories.
-root_node_backup
-admin_node/backup
-components_node/backup
-backend_node/backup
-components_react/backup
-app_views/backup
+frontend_react_next/components_node/backup
+frontend_react_next/components_react/backup
+frontend_react_next/app_views/backup
 
 #Image upload test files.
-app_files_public/*
-!app_files_public/.gitkeep.txt
+frontend_react_next/app_files_public/*
+!frontend_react_next/app_files_public/.gitkeep.txt
 #Note: to exclude specific file from gitignore:
 #!app_files_public/filename.ext
 
 #Next.
 #**************************************************************************************
 frontend_react_next/.next
+frontend_react_next/pages/backup
 
 #Extra languages.
 #**************************************************************************************

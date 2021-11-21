@@ -1,4 +1,4 @@
-//import React, { Component } from 'react';
+import React from 'react';
 
 // Next components.
 import Head from 'next/head';
