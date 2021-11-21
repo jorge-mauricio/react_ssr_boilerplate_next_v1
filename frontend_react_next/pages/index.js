@@ -92,7 +92,7 @@ class FrontendHome extends React.Component {
   render() {
     // Variables.
     // ----------------------
-    const { gSystemConfig, frontendHomeLoaded } = this.context; // Object desconstruct.
+    const { gSystemConfig, SyncSystemNS, frontendHomeLoaded } = this.context; // Object desconstruct.
     // const value = useContext(SyncSystemNSContext);
     // ----------------------
 
@@ -120,6 +120,10 @@ class FrontendHome extends React.Component {
 
         <div>
           Testing context read: { frontendHomeLoaded.toString() }
+        </div>
+
+        <div>
+          Testing language file read: { SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'frontendHomeTitleMain') }
         </div>
       </React.Fragment>
     );

@@ -8,6 +8,9 @@ import { createContext, useContext } from 'react';
 
 // Custom components.
 import { gSystemConfig } from '../config-application.js';
+
+// Node functions.
+const FunctionsGeneric = require('../' + gSystemConfig.configDirectoryComponents + '/functions-generic.js');
 // ----------------------
 
 // Context.
@@ -21,6 +24,12 @@ export class SyncSystemNSContextProvider extends React.Component {
   state = {
     // App config file.
     gSystemConfig: gSystemConfig,
+
+    // Node functions.
+    SyncSystemNS: {
+      FunctionsGeneric: FunctionsGeneric,
+      // ObjectFormsDetails: ObjectFormsDetails
+    },
 
     // Custom react components.
 
