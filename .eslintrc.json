@@ -20,6 +20,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "object-curly-spacing": "off",
       // "valid-jsdoc": "error",
       /*
       "valid-jsdoc": ["error", 
@@ -35,10 +36,10 @@
       "max-len": ["warn", {"code": 2000, "ignoreUrls": true}],
       "comma-dangle": ["error", {
         "arrays": "never",
-        "objects": "always",
+        "objects": "only-multiline",
         "imports": "never",
         "exports": "never",
         "functions": "never"
-      }]
+      }] // never | always | always-multiline | only-multiline
     }
 }

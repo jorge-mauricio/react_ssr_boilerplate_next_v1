@@ -34,7 +34,7 @@ export class SyncSystemNSContextProvider extends React.Component {
    */
   render() {
     return (
-      <SyncSystemNSContext.Provider 
+      <SyncSystemNSContext.Provider
         value={{ ...this.state }}
       >
         { this.props.children }

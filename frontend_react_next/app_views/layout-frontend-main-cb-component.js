@@ -30,31 +30,30 @@ const LayoutFrontendMain = ({ children, cphBody, titleCurrent }) => {
           React SSR Next Boilerplate
         </title>
       </Head>
-      
-      <header>
-        some header text
-      </header>
-      <nav>
-        <Link href='/'>
-          <a>
-            Go to Home
-          </a>
-        </Link>
-        <Link href='/about'>
-          <a>
-            Go to about
-          </a>
-        </Link>
-      </nav>
-      
-      {/* props destructuring */}
-      { titleCurrent }
-      { cphBody }
-      { children }
-      
-      <footer>
-        some footer text
-      </footer>
+        <header>
+          some header text
+        </header>
+        <nav>
+          <Link href='/'>
+            <a>
+              Go to Home
+            </a>
+          </Link>
+          <Link href='/about'>
+            <a>
+              Go to about
+            </a>
+          </Link>
+        </nav>
+
+        {/* props destructuring */}
+        { titleCurrent }
+        { cphBody }
+        { children }
+
+        <footer>
+          some footer text
+        </footer>
     </React.Fragment>
   );
 };

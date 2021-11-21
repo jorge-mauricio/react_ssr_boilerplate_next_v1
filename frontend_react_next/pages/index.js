@@ -3,11 +3,11 @@
 // Import Node Modules.
 // ----------------------
 // Context.
-import { useContext } from "react";
+// import { useContext } from "react";
 // import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
 import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
 
-import { gSystemConfig } from '../config-application.js';
+// import { gSystemConfig } from '../config-application.js';
 import React from 'react';
 // import Link from 'next/link';
 
@@ -55,16 +55,15 @@ class FrontendHome extends React.Component {
       await this.build();
 
       // Head content.
-      //await this.headBuild();
+      // await this.headBuild();
 
       // Title content.
-      //await this.titleCurrentBuild();
+      // await this.titleCurrentBuild();
 
 
       // Debug.
       // console.log("this.titleCurrent=",this.titleCurrent);
       // console.log("this.objCategoriesCurrent=",this.objCategoriesCurrent);
-
     } catch (asyncError) {
       /*
       if (gSystemConfig.configDebug === true) {
@@ -78,14 +77,12 @@ class FrontendHome extends React.Component {
   }
   // **************************************************************************************
   
-  
   // Build object´s content.
   // **************************************************************************************
   async build() {
   }
   // **************************************************************************************
-  
-  
+
   // Render.
   // **************************************************************************************
   /**
@@ -94,8 +91,10 @@ class FrontendHome extends React.Component {
    */
   render() {
     // Variables.
-    const { frontendHomeLoaded } = this.context; // Object desconstruct.
+    // ----------------------
+    const { gSystemConfig, frontendHomeLoaded } = this.context; // Object desconstruct.
     // const value = useContext(SyncSystemNSContext);
+    // ----------------------
 
     // Debug.
     // const { frontendHomeLoaded } = this.context;
@@ -120,7 +119,7 @@ class FrontendHome extends React.Component {
         </div>
 
         <div>
-          Testing context read: { /*frontendHomeLoaded*/ }
+          Testing context read: { frontendHomeLoaded.toString() }
         </div>
       </React.Fragment>
     );
@@ -131,7 +130,7 @@ class FrontendHome extends React.Component {
 const Index = () => {
   // Variables.
   // const value = useContext(SyncSystemNSContext);
-  const SyncSystemNSContext = useSyncSystemNSContext(); //Context (using hooks).
+  const SyncSystemNSContext = useSyncSystemNSContext(); // Context (using hooks).
   console.log('SyncSystemNSContext (insite index function)=', SyncSystemNSContext);
 
   return (

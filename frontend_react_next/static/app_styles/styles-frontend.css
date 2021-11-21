@@ -112,7 +112,8 @@ html, body {
     background-attachment: fixed;
     background-position: center 70px;
     background-color: #f57d0a; */
-    background-color: #f57d0a;
+
+    background-color: #ccc;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -752,7 +753,7 @@ button:focus {
 
     text-decoration: none;
 
-    background-image: url(../app_files_layout/frontend-layout-btn-top.png);
+    /*background-image: url(../app_files_layout/frontend-layout-btn-top.png);*/
     /*background-repeat: no-repeat;
     background-position: top left; */
     /*opacity: 0.3; */
@@ -762,7 +763,7 @@ button:focus {
 .ss-frontend-btn-top:hover {
     text-decoration: none;
 
-    background-image: url(../app_files_layout/frontend-layout-btn-top-a.png);
+    /*background-image: url(../app_files_layout/frontend-layout-btn-top-a.png);*/
 }
 
 .ss-frontend-btn-generic-bg01 {
