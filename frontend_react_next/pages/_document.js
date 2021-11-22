@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 /**
  * Document object as base for all html pages.
@@ -12,7 +12,7 @@ export default class DocumentLayoutFrontendMain extends Document {
    */
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
           <meta charSet="uft=8" />
 
@@ -24,7 +24,7 @@ export default class DocumentLayoutFrontendMain extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 };

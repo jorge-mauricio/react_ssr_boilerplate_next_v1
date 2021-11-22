@@ -36,7 +36,7 @@ class FrontendHome extends React.Component {
     super(props, context);
 
     // Debug.
-    console.log('this.context (inside FrontendHome)=', this.context);
+    // console.log('this.context (inside FrontendHome)=', this.context);
   }
   // **************************************************************************************
 
@@ -102,7 +102,7 @@ class FrontendHome extends React.Component {
     // console.log('this.context=', this.context);
     // console.log('this.SyncSystemNSContext=', this.SyncSystemNSContext);
     // console.log('value=', value);
-    console.log('frontendHomeLoaded=', frontendHomeLoaded);
+    // console.log('frontendHomeLoaded=', frontendHomeLoaded);
 
     // Output.
     return (
@@ -135,7 +135,7 @@ const Index = () => {
   // Variables.
   // const value = useContext(SyncSystemNSContext);
   const SyncSystemNSContext = useSyncSystemNSContext(); // Context (using hooks).
-  console.log('SyncSystemNSContext (insite index function)=', SyncSystemNSContext);
+  // console.log('SyncSystemNSContext (insite index function)=', SyncSystemNSContext);
 
   return (
   /*
