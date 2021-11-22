@@ -6,6 +6,11 @@
 import React from 'react';
 import { createContext, useContext } from 'react';
 
+// Node modules.
+import HTMLReactParser from 'html-react-parser'; // error / webpack
+const qs = require('query-string');
+import Safe from 'react-safe';
+
 // Custom components.
 import { gSystemConfig } from '../config-application.js';
 
@@ -22,6 +27,11 @@ export const SyncSystemNSContext = createContext();
  */
 export class SyncSystemNSContextProvider extends React.Component {
   state = {
+    // Modules and components.
+    HTMLReactParser: HTMLReactParser,
+    Safe: Safe,
+    qs: qs,
+
     // App config file.
     gSystemConfig: gSystemConfig,
 

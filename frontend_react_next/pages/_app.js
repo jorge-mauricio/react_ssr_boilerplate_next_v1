@@ -16,7 +16,12 @@ import React from 'react';
 // import { SyncSystemNSContext, objContext } from '../components_react/syncsystem-ns-cb-context.js';
 import { SyncSystemNSContextProvider } from '../components_react/syncsystem-ns-cb-context.js';
 
-import '../static/app_styles/styles-frontend.css';
+// CSS styles (third party).
+import '../app_js/nprogress/nprogress.min.css'; // nProgress CSS.
+
+// CSS styles (custom).
+// import '../static/app_styles/styles-frontend.css';
+import '../app_styles/styles-frontend.css';
 // import { useState } from 'react';
 // ----------------------
 
