@@ -91,8 +91,12 @@ class Index extends React.Component {
     </LayoutFrontendMain>
     */
 
+    /*
       <LayoutFrontendMain titleCurrent={'Home title from props'}>
         <FrontendHome />
+      </LayoutFrontendMain>
+    */
+      <LayoutFrontendMain titleCurrent={'Home title from props'} cphBody={<FrontendHome />}>
       </LayoutFrontendMain>
     );
   }

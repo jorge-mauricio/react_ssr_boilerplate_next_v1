@@ -41,6 +41,10 @@ substitute:
     /* Font stroke (behind text). */
     --ssFrontendDefaultfontStrokeWidth: 3px;
     --ssFrontendDefaultfontStrokeColor: #000000;
+
+
+    /* Images. */
+    --ssFrontendDefaultImagePath: ../static/app_files_layout/;
 }
 /* ************************************************************************************** */
 
@@ -216,8 +220,10 @@ button:focus {
     width: 415px; 
     height: 127px; 
 
-    /* background-image: url(../app_files_layout/frontend-desktop-logo.png); 
-    background-repeat: no-repeat; */
+    /*background-image: url(var(--ssFrontendDefaultImagePath)frontend-desktop-logo.png); */
+    background-image: url(../static/app_files_layout/frontend-desktop-logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .ss-frontend-layout-shortcuts-layout {

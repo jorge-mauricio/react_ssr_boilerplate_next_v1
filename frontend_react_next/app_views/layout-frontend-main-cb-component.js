@@ -5,7 +5,9 @@
 // Context.
 import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
 
+// React components.
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Next components.
 import Head from 'next/head';
@@ -40,6 +42,13 @@ Router.onRouteChangeError = () => {
 class LayoutFrontendMain extends React.Component {
   // Context.
   static contextType = SyncSystemNSContext;
+
+  // Props validation.
+  static propTypes = {
+    titleCurrent: PropTypes.string,
+    cphBody: PropTypes.element,
+    // children: PropTypes.JsxElement,
+  };
 
   // Constructor.
   // **************************************************************************************
@@ -76,10 +85,6 @@ class LayoutFrontendMain extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="format-detection" content="telephone=no" />
 
-          <title>
-            React SSR Next Boilerplate
-          </title>
-
           <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png" />
           <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="static/favicon.ico" />
@@ -90,16 +95,8 @@ class LayoutFrontendMain extends React.Component {
           <meta name="theme-color" content="#ffffff" />
 
           {/* Dynamic tags. */}
-          <meta name="title" content="" />{/*  Below 60 characters. */}
-          <meta name="description" content="" />{/*  Below 160 characters. */}
-          <meta name="keywords" content="" />{/*  Below 100 characters. */}
 
           {/*  Open Graph tags. */}
-          <meta property="og:title" content="" />
-          <meta property="og:type" content="website" />{/*  ref: http:// ogp.me/#types | https://developers.facebook.com/docs/reference/opengraph/ */}
-          <meta property="og:url" content="" />
-          <meta property="og:description" content="" />
-
           {
             /*
             Dimensions:
@@ -112,11 +109,6 @@ class LayoutFrontendMain extends React.Component {
                 - products, articles, etc (1:1): 600 x 600 | 144 x 144 (min) | 4096 x 4096 (max)
             */
           }
-          <meta property="og:image" content="" />{/*  The recommended resolution for the OG image is 1200x627 pixels, the size up to 5MB. 120x120px, up to 1MB | JPG ou PNG, below 300k - minimum resolution: 300x200 pixels. */}
-          {/* <meta property="og:image:secure_url" content="" /> */}
-          <meta property="og:image:alt" content="" />
-
-          <meta property="og:locale" content={ SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configFrontendLanguage') } />
 
           <meta name="robots" content="index,follow" />
           <meta name="language" content="english" />
@@ -131,31 +123,57 @@ class LayoutFrontendMain extends React.Component {
           {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css" /> */}
           {/* <link href='nprogress.css' /> */}
         </Head>
+        <div id="root">
+          <header className="ss-frontend-layout-header01">
+            <div>
+              <a href="/" title="Home" className="ss-frontend-layout-header-logo">
+              </a>
+            </div>
 
-        <header>
-          some header text
-        </header>
-        <nav>
-          <Link href='/'>
-            <a>
-              Go to Home
-            </a>
-          </Link>
-          <Link href='/about'>
-            <a>
-              Go to about
-            </a>
-          </Link>
-        </nav>
+            <nav>
+              <Link href='/'>
+                <a className="ss-frontend-link01" title="Home">
+                  Home
+                </a>
+              </Link>
+              <Link href='/about'>
+                <a className="ss-frontend-link01" title="About">
+                  About
+                </a>
+              </Link>
+            </nav>
+          </header>
 
-        {/* props destructuring */}
-        { this.props.titleCurrent }
-        { this.props.cphBody }
-        { this.props.children }
+          <main>
+            {/* Content place holder - current title */}
+            <h1 id="titleCurrent" className="ss-frontend-heading01">
+              {/* this.state.titleCurrent */}
+              {/* this.props.cphTitle */}
+              { this.props.titleCurrent }
+            </h1>
 
-        <footer>
-          some footer text
-        </footer>
+            {/* props destructuring */}
+            { this.props.titleCurrent }
+            { this.props.cphBody }
+            { /* this.props.children */ }
+          </main>
+
+          <footer>
+            {/* Credits. */}
+            <small className="ss-frontend-copyright ss-frontend-credit-layout">
+              {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutCopyright')} ©&nbsp;
+              {gSystemConfig.configCopyrightYear}&nbsp;
+              {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configSiteTile')}.&nbsp;
+              {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutCopyright1')}
+
+              {/* Development. */}
+              <a href={gSystemConfig.configDevSite} target="_blank" rel="noreferrer" className="ss-frontend-credit" style={{ float: 'right' }}>
+                {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutDevelopment')}:&nbsp;
+                {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutDevName')}
+              </a>
+            </small>
+          </footer>
+        </div>
       </React.Fragment>
     );
   }

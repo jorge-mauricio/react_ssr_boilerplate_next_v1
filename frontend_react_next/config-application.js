@@ -50,9 +50,11 @@ gSystemConfig.configCopyrightYear = '2008';
 
 // gSystemConfig.configSystemURL = "http:// localhost:3000"; // http:// multiplatformv1.syncsystem.com.br
 gSystemConfig.configSystemURL = process.env.CONFIG_SYSTEM_URL; // http:// multiplatformv1.syncsystem.com.br
+// gSystemConfig.configSystemURL = process.env.REACT_APP_CONFIG_SYSTEM_URL; // http:// multiplatformv1.syncsystem.com.br
 // gSystemConfig.configSystemURL = window.location.origin; // http:// multiplatformv1.syncsystem.com.br
 // gSystemConfig.configSystemURLSSL = "http:// localhost:3000"; // http:// multiplatformv1.syncsystem.com.br
 gSystemConfig.configSystemURLSSL = process.env.CONFIG_SYSTEM_URL_SSL; // http:// multiplatformv1.syncsystem.com.br
+// gSystemConfig.configSystemURLSSL = process.env.REACT_APP_CONFIG_SYSTEM_URL_SSL; // http:// multiplatformv1.syncsystem.com.br
 // gSystemConfig.configSystemURLSSL = window.location.origin; // http:// multiplatformv1.syncsystem.com.br
 
 gSystemConfig.configAPIURL = gSystemConfig.configSystemURLSSL; // process.env.CONFIG_API_URL;

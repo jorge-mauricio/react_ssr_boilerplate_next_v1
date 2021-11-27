@@ -253,7 +253,11 @@ class FrontendHome extends React.Component {
       // this.arrPublicationsHomeListing = this.objPublicationsListingHomeJson.oplRecords.resultsPublicationsListing; // working
 
       // Debug.
-      // console.log("this.objCategoriesCurrent=",this.objCategoriesCurrent);
+      console.log('gSystemConfig.configSystemURL=', gSystemConfig.configSystemURL);
+      // console.log('process.env.REACT_APP_CONFIG_SYSTEM_URL=', process.env.REACT_APP_CONFIG_SYSTEM_URL);
+      // console.log('process.env.NEXT_PUBLIC_CONFIG_PORT=', process.env.NEXT_PUBLIC_CONFIG_PORT);
+      // console.log('process.env.NEXT_PUBLIC_CONFIG_PORT=', process.env.NEXT_PUBLIC_CONFIG_PORT);
+      
     } catch (asyncError) {
       if (gSystemConfig.configDebug === true) {
         console.error(asyncError);
@@ -383,6 +387,9 @@ class FrontendHome extends React.Component {
     return (
       <React.Fragment>
         <Head>
+          <title>
+            { this.titleCurrent }
+          </title>
           <meta name="title" content={ this.metaTitle } />
           <meta name="description" content={ this.metaDescription } />
           <meta name="keywords" content={ this.metaKeywords } />
