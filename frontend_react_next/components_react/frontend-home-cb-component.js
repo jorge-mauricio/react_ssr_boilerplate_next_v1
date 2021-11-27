@@ -9,6 +9,9 @@ import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react
 
 // import { gSystemConfig } from '../config-application.js';
 import React from 'react';
+
+// Next components.
+import Head from 'next/head';
 // import Link from 'next/link';
 // ----------------------
 
@@ -357,7 +360,7 @@ class FrontendHome extends React.Component {
     // ----------------------
     if (this.state.dataLoaded === false) {
       if (gSystemConfig.configDebug === true) {
-        console.log('Still loading data.');
+        console.log('Still loading data (frontend-home-cb-component).');
       }
 
       /*
@@ -379,24 +382,41 @@ class FrontendHome extends React.Component {
     // Output.
     return (
       <React.Fragment>
-        <h1>
-          Home Page
-        </h1>
-        <div>
-          Welcome to the home page 22
-        </div>
+        <Head>
+          <meta name="title" content={ this.metaTitle } />
+          <meta name="description" content={ this.metaDescription } />
+          <meta name="keywords" content={ this.metaKeywords } />
 
-        <div>
-          Testing config read: { gSystemConfig.configSystemClientName }
-        </div>
+          <meta property="og:title" content={ this.metaTitle } />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={ this.metaURLCurrent } />
+          <meta property="og:description" content={ this.metaDescription } />
 
-        <div>
-          Testing context read: { frontendHomeLoaded.toString() }
-        </div>
+          <meta property="og:image" content={ gSystemConfig.configSystemURL + '/' + gSystemConfig.configDirectoryFilesLayoutSD + '/' + 'icon-logo-og.png' } />
+          <meta property="og:image:alt" content={ this.metaTitle } />
 
-        <div>
-          Testing language file read: { SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configSiteTile') }
-        </div>
+          <meta property="og:locale" content={ SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configFrontendLanguage') } />
+        </Head>
+        <React.Fragment>
+          <h1>
+            Home Page
+          </h1>
+          <div>
+            Welcome to the home page 22
+          </div>
+
+          <div>
+            Testing config read: { gSystemConfig.configSystemClientName }
+          </div>
+
+          <div>
+            Testing context read: { frontendHomeLoaded.toString() }
+          </div>
+
+          <div>
+            Testing language file read: { SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configSiteTile') }
+          </div>
+        </React.Fragment>
       </React.Fragment>
     );
   }
