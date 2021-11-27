@@ -14,7 +14,9 @@
   },
   "main": "server.js",
   "scripts": {
-    "dev-next": "next -p 3002 ./frontend_react_next",
+    "next-dev": "next -p 3002 ./frontend_react_next",
+    "next-build": "next -p 3002 ./frontend_react_next build",
+    "next-start": "next -p 3002 ./frontend_react_next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

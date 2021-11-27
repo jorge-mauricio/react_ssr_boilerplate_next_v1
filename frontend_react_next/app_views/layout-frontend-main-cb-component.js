@@ -3,25 +3,28 @@
 // Import Node Modules.
 // ----------------------
 // Context.
-import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
+// import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
+import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
 
-// React components.
+// Components - react.
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// Next components.
+// Components - next.
 import Head from 'next/head';
 import Link from 'next/link';
 import Router from 'next/router';
 // import { Head, Link } from 'next';
 import nProgress from 'nprogress';
+
+// Components - custom.
 // ----------------------
 
 // Router hooks.
 // ----------------------
 Router.onRouteChangeStart = (url) => {
   // Debug.
-  console.log('url=', url);
+  // console.log('url=', url);
 
   nProgress.start();
 };
@@ -74,7 +77,8 @@ class LayoutFrontendMain extends React.Component {
     // const SyncSystemNSContext = useSyncSystemNSContext(); // Context (using hooks).
     // const { gSystemConfig, SyncSystemNS, HTMLReactParser } = SyncSystemNSContext; // Context (using hooks).
 
-    const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context;
+    // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context;
+    const { gSystemConfig, SyncSystemNS } = this.context;
     // ----------------------
 
     return (

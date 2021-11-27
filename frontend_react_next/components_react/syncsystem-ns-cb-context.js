@@ -2,9 +2,10 @@
 
 // Import Node Modules.
 // ----------------------
-// React components.
+// Components - react.
 import React from 'react';
 import { createContext, useContext } from 'react';
+import PropTypes from 'prop-types';
 
 // Node modules.
 import HTMLReactParser from 'html-react-parser'; // error / webpack
@@ -16,6 +17,10 @@ import { gSystemConfig } from '../config-application.js';
 
 // Node functions.
 const FunctionsGeneric = require('../' + gSystemConfig.configDirectoryComponents + '/functions-generic.js');
+
+// JS functions.
+// import {elementMessage01} from "../app_js/functions-syncsystem.js";
+import { FunctionsSyncSystem } from '../app_js/functions-syncsystem.js';
 // ----------------------
 
 // Context.
@@ -26,6 +31,11 @@ export const SyncSystemNSContext = createContext();
  * Context provider "namespace".
  */
 export class SyncSystemNSContextProvider extends React.Component {
+  // Props validation.
+  static propTypes = {
+    children: PropTypes.element,
+  };
+
   state = {
     // Modules and components.
     HTMLReactParser: HTMLReactParser,
@@ -34,6 +44,9 @@ export class SyncSystemNSContextProvider extends React.Component {
 
     // App config file.
     gSystemConfig: gSystemConfig,
+
+    // JS functions.
+    FunctionsSyncSystem: FunctionsSyncSystem,
 
     // Node functions.
     SyncSystemNS: {

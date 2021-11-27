@@ -4,16 +4,18 @@
 // ----------------------
 // Context.
 // import { useContext } from "react";
-// import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
-import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
+import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
+// import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
 
+// Components - react.
 // import { gSystemConfig } from '../config-application.js';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Components - next.
 // import Link from 'next/link';
 // import { useRouter } from 'next/router'; // functional components
-import { withRouter } from "next/router"; // class based components
+// import { withRouter } from "next/router"; // class based components
 
 // Components - custom.
 import LayoutFrontendMain from '../app_views/layout-frontend-main-cb-component.js';
@@ -54,7 +56,8 @@ class Index extends React.Component {
 
     // Variables.
     // ----------------------
-    const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context;
+    // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context; // working
+    const { gSystemConfig } = this.context;
     // ----------------------
 
     // Properties.
@@ -68,10 +71,12 @@ class Index extends React.Component {
     // ----------------------
 
     // Debug.
-    // console.log('qs=', qs);
-    // console.log('props=', this.props);
-    // console.log('context=', context);
-    console.log('this.objParametersQueryString=', this.objParametersQueryString);
+    if (gSystemConfig.configDebug === true) {
+      // console.log('qs=', qs);
+      // console.log('props=', this.props);
+      // console.log('context=', context);
+      console.log('this.objParametersQueryString (index)=', this.objParametersQueryString);
+    }
   }
   // **************************************************************************************
 
@@ -95,8 +100,8 @@ class Index extends React.Component {
       <LayoutFrontendMain titleCurrent={'Home title from props'}>
         <FrontendHome />
       </LayoutFrontendMain>
-    */
-      <LayoutFrontendMain titleCurrent={'Home title from props'} cphBody={<FrontendHome />}>
+    *//* working (with children) */
+      <LayoutFrontendMain { ...this.props} cphBody={<FrontendHome { ...this.props} /> }>
       </LayoutFrontendMain>
     );
   }

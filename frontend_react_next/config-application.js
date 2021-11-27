@@ -11,7 +11,7 @@
 // ----------------------
 
 // Create a namespace to help export all variables / properties.
-let gSystemConfig = {}; // eslint-disable-line
+const gSystemConfig = {};
 
 // NodeJS configuration.
 // **************************************************************************************
@@ -387,7 +387,7 @@ gSystemConfig.configCategoryType = [
   { category_type: 9, category_type_function_label: 'backendCategoriesType9Function', queryString: '-' }, // Segment
   { category_type: 12, category_type_function_label: 'backendCategoriesType12Function', queryString: '' }, // Forms
   { category_type: 13, category_type_function_label: 'backendCategoriesType13Function', queryString: '' }, // Registers
-  { category_type: 17, category_type_function_label: 'backendCategoriesType17Function', queryString: 'idType=2' }, // Quizzes
+  { category_type: 17, category_type_function_label: 'backendCategoriesType17Function', queryString: 'idType=2' } // Quizzes
 ];
 // **************************************************************************************
 
@@ -751,18 +751,18 @@ gSystemConfig.configFilesFrontendPaginationNRecords = 10;
 gSystemConfig.configContentSort = 'id ASC'; // options: id | sort_order | date_creation esc | date_creation desc
 gSystemConfig.enableContentSortCustom = 1; // 0 - disable | 1 - enable
 /*
-gSystemConfig.configContentInputOrder = ["inputRowContent_id_parent", 
-                                            "inputRowContent_sort_order", 
-                                            "inputRowContent_date1", 
-                                            "inputRowContent_id_register_user", 
-                                            "inputRowContent_content_type", 
-                                            "inputRowContent_content_columns", 
-                                            "inputRowContent_align_text", 
-                                            "inputRowContent_align_image", 
-                                            "inputRowContent_content_text", 
-                                            "inputRowContent_content_url", 
-                                            "inputRowContent_caption", 
-                                            "inputRowContent_file", 
+gSystemConfig.configContentInputOrder = ["inputRowContent_id_parent",
+                                            "inputRowContent_sort_order",
+                                            "inputRowContent_date1",
+                                            "inputRowContent_id_register_user",
+                                            "inputRowContent_content_type",
+                                            "inputRowContent_content_columns",
+                                            "inputRowContent_align_text",
+                                            "inputRowContent_align_image",
+                                            "inputRowContent_content_text",
+                                            "inputRowContent_content_url",
+                                            "inputRowContent_caption",
+                                            "inputRowContent_file",
                                             "inputRowContent_activation"
                                           ];*/ /* not in use */
 
@@ -2180,15 +2180,15 @@ gSystemConfig.enableUsersActivation5 = 1; // 0 - disable | 1 - enable
 // **************************************************************************************
 /*
 module.exports =  {
-    configSystemClientName : configSystemClientName, 
-    configSiteTitle : configSiteTitle, 
-    configSystemName : configSystemName, 
-    configDevName : configDevName, 
-    configDevSite : configDevSite, 
-    configCopyrightYear : configCopyrightYear, 
-    configCopyrightYear : configCopyrightYear, 
-    configCopyrightYear : configCopyrightYear, 
-    configCopyrightYear : configCopyrightYear, 
+    configSystemClientName : configSystemClientName,
+    configSiteTitle : configSiteTitle,
+    configSystemName : configSystemName,
+    configDevName : configDevName,
+    configDevSite : configDevSite,
+    configCopyrightYear : configCopyrightYear,
+    configCopyrightYear : configCopyrightYear,
+    configCopyrightYear : configCopyrightYear,
+    configCopyrightYear : configCopyrightYear,
     SomeMathObject : SomeMathObject
 }
 */

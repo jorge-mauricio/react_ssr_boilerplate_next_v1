@@ -4,15 +4,19 @@
 // ----------------------
 // Context.
 // import { useContext } from "react";
-// import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
-import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
+import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
+// import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
 
+// Components - react.
 // import { gSystemConfig } from '../config-application.js';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-// Next components.
+// Components - next.
 import Head from 'next/head';
 // import Link from 'next/link';
+
+// Components - custom.
 // ----------------------
 
 /**
@@ -21,6 +25,20 @@ import Head from 'next/head';
 class FrontendHome extends React.Component {
   // Context.
   static contextType = SyncSystemNSContext;
+
+  /**
+   * @param {any} query
+   * @return {object}
+   * Access query strings.
+  */
+  static getInitialProps({ query }) {
+    return ({ query });
+  }
+
+  // Props validation.
+  static propTypes = {
+    query: PropTypes.object,
+  };
 
   // Constructor.
   // **************************************************************************************
@@ -36,7 +54,10 @@ class FrontendHome extends React.Component {
     super(props, context);
 
     // Variables.
-    const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem, qs } = this.context;
+    // ----------------------
+    // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem, qs } = this.context;
+    const { gSystemConfig } = this.context;
+    // ----------------------
 
     // Properties.
     // ----------------------
@@ -78,6 +99,9 @@ class FrontendHome extends React.Component {
       objParametersQueryString = qs.parse(this.props.location.search);
     }
     */
+    if (this.props.query) {
+      this.objParametersQueryString = this.props.query;
+    }
 
     /*
     if (this.objParametersQueryString.masterPageFrontendSelect) {
@@ -128,9 +152,9 @@ class FrontendHome extends React.Component {
     })();
 
     // Debug.
-    // console.log("props=", props);
-    // console.log("this.objParametersQueryString(categories listing)=", this.objParametersQueryString);
-    // console.log("this.queryDefault=", this.queryDefault);
+    // console.log('props=', props);
+    console.log('this.objParametersQueryString (frontend home)=', this.objParametersQueryString);
+    // console.log('this.queryDefault=', this.queryDefault);
   }
   // **************************************************************************************
 
@@ -143,7 +167,10 @@ class FrontendHome extends React.Component {
    */
   async componentDidMount() {
     // Variables.
-    const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem, qs } = this.context;
+    // ----------------------
+    // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem, qs } = this.context;
+    const { gSystemConfig } = this.context;
+    // ----------------------
 
     // Logic.
     // ----------------------
@@ -213,7 +240,8 @@ class FrontendHome extends React.Component {
   async build() {
     // Variables.
     // ----------------------
-    const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context; // Deconstruct variables (each variable is allocated to it´s correspondent name).
+    // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context; // Deconstruct variables (each variable is allocated to it´s correspondent name).
+    const { gSystemConfig, SyncSystemNS } = this.context;
 
     // let apiURLCategoriesHomeListing = ''; // working
     // let apiCategoriesHomeListingResponse; // working
@@ -253,11 +281,12 @@ class FrontendHome extends React.Component {
       // this.arrPublicationsHomeListing = this.objPublicationsListingHomeJson.oplRecords.resultsPublicationsListing; // working
 
       // Debug.
-      console.log('gSystemConfig.configSystemURL=', gSystemConfig.configSystemURL);
-      // console.log('process.env.REACT_APP_CONFIG_SYSTEM_URL=', process.env.REACT_APP_CONFIG_SYSTEM_URL);
-      // console.log('process.env.NEXT_PUBLIC_CONFIG_PORT=', process.env.NEXT_PUBLIC_CONFIG_PORT);
-      // console.log('process.env.NEXT_PUBLIC_CONFIG_PORT=', process.env.NEXT_PUBLIC_CONFIG_PORT);
-      
+      if (gSystemConfig.configDebug === true) {
+        console.log('gSystemConfig.configSystemURL=', gSystemConfig.configSystemURL);
+        // console.log('process.env.REACT_APP_CONFIG_SYSTEM_URL=', process.env.REACT_APP_CONFIG_SYSTEM_URL);
+        // console.log('process.env.NEXT_PUBLIC_CONFIG_PORT=', process.env.NEXT_PUBLIC_CONFIG_PORT);
+        // console.log('process.env.NEXT_PUBLIC_CONFIG_PORT=', process.env.NEXT_PUBLIC_CONFIG_PORT);
+      }
     } catch (asyncError) {
       if (gSystemConfig.configDebug === true) {
         console.error(asyncError);
@@ -336,10 +365,13 @@ class FrontendHome extends React.Component {
    */
   async titleCurrentBuild() {
     // Variables.
-    const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context; // Deconstruct variables (each variable is allocated to it´s correspondent name).
+    // ----------------------
+    // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context; // Deconstruct variables (each variable is allocated to it´s correspondent name).
+    const { FunctionsSyncSystem } = this.context; // Deconstruct variables (each variable is allocated to it´s correspondent name).
+    // ----------------------
 
     // Title Current.
-    // FunctionsSyncSystem.elementMessage01('titleCurrent', this.titleCurrent);
+    FunctionsSyncSystem.elementMessage01('titleCurrent', this.titleCurrent);
     // FunctionsSyncSystem.elementMessage01('titleCurrentMobile', this.titleCurrent);
   }
   // **************************************************************************************
@@ -354,7 +386,8 @@ class FrontendHome extends React.Component {
     // Variables.
     // ----------------------
     // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem, HTMLReactParser, SyncSystemRC } = this.context;
-    const { gSystemConfig, SyncSystemNS, HTMLReactParser, frontendHomeLoaded } = this.context;
+    // const { gSystemConfig, SyncSystemNS, HTMLReactParser, frontendHomeLoaded } = this.context;
+    const { gSystemConfig, SyncSystemNS, frontendHomeLoaded } = this.context;
 
     // let objCategoriesHome105; // working
     // let objPublicationsHome236; // working
