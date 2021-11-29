@@ -13,6 +13,7 @@
 
 
 #Backup directories.
+root_backup
 frontend_react_next/components_node/backup
 frontend_react_next/components_react/backup
 frontend_react_next/app_views/backup
@@ -26,6 +27,7 @@ frontend_react_next/app_files_public/*
 #Next.
 #**************************************************************************************
 frontend_react_next/.next
+frontend_react_next/build
 frontend_react_next/pages/backup
 
 #Extra languages.
