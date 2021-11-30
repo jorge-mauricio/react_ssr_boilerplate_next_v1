@@ -44,7 +44,7 @@ substitute:
 
 
     /* Images. */
-    --ssFrontendDefaultImagePath: ../static/app_files_layout/;
+    --ssFrontendDefaultImagePath: ../public/app_files_layout/;
 }
 /* ************************************************************************************** */
 
@@ -221,7 +221,7 @@ button:focus {
     height: 127px; 
 
     /*background-image: url(var(--ssFrontendDefaultImagePath)frontend-desktop-logo.png); */
-    background-image: url(../static/app_files_layout/frontend-desktop-logo.png);
+    background-image: url(../public/app_files_layout/frontend-desktop-logo.png);
     background-repeat: no-repeat;
     background-size: cover;
 }

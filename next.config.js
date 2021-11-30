@@ -7,15 +7,22 @@
 
 module.exports = {
   // generateEtags: false,
-  // distDir: 'build',
+  // distDir: 'build', // Note: observed slower load / build.
 
   // Alias
   async rewrites() {
     return [
+      /*
       {
         // source: '/' + gSystemConfig.configDirectoryFilesLayoutSD + '/:files',
         source: '/files-layout/:files',
         destination: '/_next/static/media/:files',
+      },
+      */
+      {
+        // source: '/' + gSystemConfig.configDirectoryFilesLayoutSD + '/:files',
+        source: '/files-layout/:files',
+        destination: '/app_files_layout/:files',
       }
     ];
   },
