@@ -11,12 +11,14 @@ Context refs
 // ----------------------
 // React components.
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Custom components.
 // import { SyncSystemNSContext, objContext } from '../components_react/syncsystem-ns-cb-context.js';
 import { SyncSystemNSContextProvider } from '../components_react/syncsystem-ns-cb-context.js';
 
 // CSS styles (third party).
+import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap.
 import '../app_js/nprogress/nprogress.min.css'; // nProgress CSS.
 
 // CSS styles (custom).
@@ -26,21 +28,20 @@ import '../app_styles/styles-frontend.css';
 // ----------------------
 
 /**
- * ContextProvider.
+ * Context Provider.
  * @param {any} Component
  * @param {any} pageProps
  * @return {JsxElement}
  */
 export default function ContextProvider({ Component, pageProps }) {
-  // Get menu data via GraphQL query in `pageProps`.
-  // const { menu } = pageProps;
-
-  // Store menu as state for the MenuProvider.
-  // const [navMenu] = useState(menu);
-
   return (
     <SyncSystemNSContextProvider>
       <Component {...pageProps} />
     </SyncSystemNSContextProvider>
   );
+};
+
+ContextProvider.propTypes = {
+  Component: PropTypes.elementType,
+  pageProps: PropTypes.object,
 };

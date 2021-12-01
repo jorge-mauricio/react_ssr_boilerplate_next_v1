@@ -6,6 +6,7 @@
 // const { gSystemConfig } = require('./frontend_react_next/config-application.js');
 
 module.exports = {
+  reactStrictMode: true,
   // generateEtags: false,
   // distDir: 'build', // Note: observed slower load / build.
 

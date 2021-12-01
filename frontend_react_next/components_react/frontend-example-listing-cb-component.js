@@ -15,25 +15,17 @@ import PropTypes from 'prop-types';
 // Components - next.
 import Head from 'next/head';
 // import Link from 'next/link';
+import fetch from 'isomorphic-fetch';
 
 // Components - custom.
 // ----------------------
 
 /**
- * Frontend Home Component.
+ * Frontend Example Listing Component.
  */
-class FrontendHome extends React.Component {
+class FrontendExampleListing extends React.Component {
   // Context.
   static contextType = SyncSystemNSContext;
-
-  /**
-   * @param {any} query
-   * @return {object}
-   * Access query strings.
-  */
-  static getInitialProps({ query }) {
-    return ({ query });
-  }
 
   // Props validation.
   static propTypes = {
@@ -85,11 +77,11 @@ class FrontendHome extends React.Component {
     // Value definition - props parameters.
     // ----------------------
     /*
-        if(this.props.match.params.idParentCategories)
-        {
-            this._idParentCategories = this.props.match.params.idParentCategories;
-        }
-        */
+    if(this.props.match.params.idParentCategories)
+    {
+        this._idParentCategories = this.props.match.params.idParentCategories;
+    }
+    */
     // ----------------------
 
     // Value definition - query string.
@@ -230,6 +222,9 @@ class FrontendHome extends React.Component {
     // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context; // Deconstruct variables (each variable is allocated to it´s correspondent name).
     const { gSystemConfig, SyncSystemNS } = this.context;
 
+    let apiListingResponse;
+    let arrApiListingResponseJson;
+
     // let apiURLCategoriesHomeListing = ''; // working
     // let apiCategoriesHomeListingResponse; // working
 
@@ -241,10 +236,16 @@ class FrontendHome extends React.Component {
     // ----------------------
     /**/
     try {
+      // Fetch API.
+      apiListingResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
+      arrApiListingResponseJson = await apiListingResponse.json();
+
+
       // Value definition.
       // this.titleCurrent = this.objCategoriesCurrent.tblCategoriesTitle;
       // this.titleCurrent = SyncSystemNS.FunctionsGeneric.removeHTML01(this.objCategoriesCurrent.ocdRecord.tblCategoriesTitle);
-      this.titleCurrent = SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'frontendHomeTitleMain');
+      // this.titleCurrent = SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'frontendHomeTitleMain');
+      this.titleCurrent = 'Example Listing';
       // console.log("this.objCategoriesCurrent=",this.objCategoriesCurrent);
 
       // idParentCategories = this.props.match.params.idParentCategories;
@@ -278,8 +279,11 @@ class FrontendHome extends React.Component {
       if (gSystemConfig.configDebug === true) {
         console.error(asyncError);
       }
+      arrApiListingResponseJson = [];
     } finally {
       // Update state.
+      this.setState({ arrApiListingResponseJson: arrApiListingResponseJson });
+
       // this.setState({ objCategoriesHomeListing: this.objCategoriesHomeListing }); // working
       // this.setState({ arrCategoriesHomeListing: this.arrCategoriesHomeListing }); // working
 
@@ -376,6 +380,8 @@ class FrontendHome extends React.Component {
     // const { gSystemConfig, SyncSystemNS, HTMLReactParser, frontendHomeLoaded } = this.context;
     const { gSystemConfig, SyncSystemNS, frontendHomeLoaded } = this.context;
 
+    const { arrApiListingResponseJson } = this.state;
+
     // let objCategoriesHome105; // working
     // let objPublicationsHome236; // working
     // ----------------------
@@ -384,7 +390,7 @@ class FrontendHome extends React.Component {
     // ----------------------
     if (this.state.dataLoaded === false) {
       if (gSystemConfig.configDebug === true) {
-        console.log('Still loading data (frontend-home-cb-component).');
+        console.log('Still loading data (frontend-example-listing-cb-component).');
       }
 
       /*
@@ -393,6 +399,7 @@ class FrontendHome extends React.Component {
         </SyncSystemRC.FrontendElementsLoading>
       );
       */
+      return ('');
     }
     // ----------------------
 
@@ -401,7 +408,7 @@ class FrontendHome extends React.Component {
     // ----------------------
 
     // Debug.
-    // console.log("this._pagingTotal(inside render)=", this._pagingTotal);
+    console.log('arrApiListingResponseJson=', arrApiListingResponseJson); // working
 
     // Output.
     return (
@@ -425,11 +432,8 @@ class FrontendHome extends React.Component {
           <meta property="og:locale" content={ SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configFrontendLanguage') } />
         </Head>
         <React.Fragment>
-          <h1>
-            Home Page
-          </h1>
           <div>
-            Welcome to the home page 22
+            Example Listing Page
           </div>
 
           <div>
@@ -450,4 +454,4 @@ class FrontendHome extends React.Component {
   // **************************************************************************************
 }
 
-export default FrontendHome;
+export default FrontendExampleListing;

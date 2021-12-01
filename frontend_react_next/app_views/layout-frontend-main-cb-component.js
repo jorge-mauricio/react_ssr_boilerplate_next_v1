@@ -140,9 +140,14 @@ class LayoutFrontendMain extends React.Component {
                   Home
                 </a>
               </Link>
-              <Link href='/about'>
-                <a className="ss-frontend-link01" title="About">
-                  About
+              <Link href='/example-listing'>
+                <a className="ss-frontend-link01" title="Example Listing">
+                  Example Listing
+                </a>
+              </Link>
+              <Link as="/example-listing/123/" href='/example-listing/?id=123'>
+                <a className="ss-frontend-link01" title="Example Listing">
+                  Example Listing (dynamic)
                 </a>
               </Link>
             </nav>
@@ -160,6 +165,14 @@ class LayoutFrontendMain extends React.Component {
             { this.props.titleCurrent }
             { this.props.cphBody }
             { /* this.props.children */ }
+
+            {/* Bootstrap. */}
+            <div className="d-none d-md-block d-lg-block d-xl-block">
+              desktop, tablet, tv
+            </div>
+            <div className="d-md-none">
+              mobile
+            </div>
           </main>
 
           <footer>
