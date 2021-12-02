@@ -13,12 +13,21 @@
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 12
+        "ecmaVersion": 12,
+        "sourceType": "module"
     },
     "plugins": [
         "react",
         "@typescript-eslint"
     ],
+    "globals": { 
+      "React": "writable"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
     "rules": {
       "object-curly-spacing": "off",
       // "valid-jsdoc": "error",
