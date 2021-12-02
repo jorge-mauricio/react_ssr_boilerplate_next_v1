@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import React from 'react';
 // import Link from 'next/link';
 
 // Components.
@@ -6,19 +7,18 @@ import LayoutFrontendMain from '../app_views/layout-frontend-main-cb-component.j
 
 const Frontend404 = () => {
   return (
-    /*
-    <LayoutFrontendMain titleCurrent={'Home title'} cphBody={()=>{
-      <FrontendHome></FrontendHome>
-    }}>
-      
-    </LayoutFrontendMain>
-    */
+  /*
+  <LayoutFrontendMain titleCurrent={'Home title'} cphBody={()=>{
+    <FrontendHome></FrontendHome>
+  }}>
+  </LayoutFrontendMain>
+  */
 
     <LayoutFrontendMain titleCurrent={'Error'}>
       <p>
         Page not found.
       </p>
-    </LayoutFrontendMain>    
+    </LayoutFrontendMain>
   );
 };
 

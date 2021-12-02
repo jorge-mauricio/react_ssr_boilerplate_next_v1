@@ -7,9 +7,9 @@ SyncSystem – less code, more logic. A product owned by the company Planejament
 
 Development and conception carried out by Jorge Mauricio (JM) – Full Stack Web Developer / Designer and company’s head partner.
 
-Any modification or implementation in the github code must be informed / consulted and approved with the company or the author. The code is free for use commercially and personally, without the need of written or verbal authorization. 
+Any modification or implementation in the github code must be informed / consulted and approved with the company or the author. The code is free for use commercially and personally, without the need of written or verbal authorization.
 
-The developer provides professional training for better understanding of its architecture and use of the code. Price quotes can be requested through the website. 
+The developer provides professional training for better understanding of its architecture and use of the code. Price quotes can be requested through the website.
 
 Website / contact:
 http://fullstackwebdesigner.com
@@ -26,7 +26,7 @@ const gSystemConfig = {};
 
 // NodeJS configuration.
 // **************************************************************************************
-gSystemConfig.configDebug = false; // true (debug mode) | false (production mode)
+gSystemConfig.configDebug = true; // true (debug mode) | false (production mode)
 // **************************************************************************************
 
 // General configuration.

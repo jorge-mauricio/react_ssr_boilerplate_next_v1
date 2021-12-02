@@ -8,6 +8,10 @@
 .env_export
 .env.prod
 
+#notes.
+todo.txt
+notes.txt
+
 #Webpack distribution directory (check if it´s not necessary, when publishing).
 #dist
 
