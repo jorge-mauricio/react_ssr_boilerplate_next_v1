@@ -44,6 +44,7 @@ import '../app_styles/styles-frontend.css';
   );
 };
 
+// Props validation.
 AppNext.propTypes = {
   Component: PropTypes.elementType,
   pageProps: PropTypes.object,

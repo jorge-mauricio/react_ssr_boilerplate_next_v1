@@ -4,38 +4,51 @@
 // ----------------------
 // Context.
 // import { useContext } from "react";
-import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
+import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context';
 // import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
 
 // Components - react.
 // import { gSystemConfig } from '../config-application.js';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import PropTypes from 'prop-types';
 
 // Components - next.
+import { NextPageContext } from 'next';
 // import Link from 'next/link';
 // import { useRouter } from 'next/router'; // functional components
 // import { withRouter } from "next/router"; // class based components
 
 // Components - custom.
-import LayoutFrontendMain from '../app_views/layout-frontend-main-cb-component.js';
-import FrontendHome from '../components_react/frontend-home-cb-component.js';
+import LayoutFrontendMain from '../app_views/layout-frontend-main-cb-component';
+import FrontendHome from '../components_react/frontend-home-cb-component';
 // ----------------------
 
+// Interfaces / types.
+interface IIndexProps {
+  props?: object,
+  context?: any,
+  query?: object
+}
+
+interface IIndexState {
+}
 
 /**
  * Index Component.
  */
-class Index extends React.Component {
+class Index extends React.Component<IIndexProps, IIndexState> {
+  // Properties.
+  objParametersQueryString: any;
+
   // Context.
   static contextType = SyncSystemNSContext;
 
   /**
-   * @param {any} query
-   * @return {object}
+   * @param { object } context
+   * @return { object }
    * Access query strings.
   */
-  static getInitialProps({ query }) {
+  static async getInitialProps({ query }: NextPageContext) {
     return ({ query });
   }
 
@@ -47,11 +60,11 @@ class Index extends React.Component {
   // Constructor.
   // **************************************************************************************
   /**
-   * @param {any} props
-   * @param {any} context
+   * @param { any } props
+   * @param { any } context
    * Constructor.
    */
-  constructor(props, context) {
+  constructor(props: any, context: any) {
     super(props, context);
 
     // Variables.
@@ -84,9 +97,9 @@ class Index extends React.Component {
   // **************************************************************************************
   /**
    * Render output.
-   * @return {JsxElement}
+   * @return { ReactElement }
    */
-  render() {
+  render(): ReactElement {
     return (
     /*
     <LayoutFrontendMain titleCurrent={'Home title'} cphBody={()=>{

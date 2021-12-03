@@ -1,18 +1,23 @@
 'use strict';
+
+// Import Node Modules.
+// ----------------------
 // React components.
 import React, { ReactElement } from 'react';
 
 // Next components.
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+// ----------------------
 
 interface IProps {
+  props?: any,
+  context?: any,
 }
 
 /**
- * Document object as base for all html pages.
+ * Document object as base for all HTML pages.
  */
 class DocumentLayoutFrontendMain extends Document<IProps> {
-
   // Constructor.
   // **************************************************************************************
   /**
