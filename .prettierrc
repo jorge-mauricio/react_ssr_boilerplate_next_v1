@@ -1,6 +1,7 @@
 {
     "_comment": "'trailingComma': 'none',",
     "semi": true,
+    "trailingComma": "all",
     "printWidth": 2000,
     "singleQuote": true,
     "tabWidth": 2,

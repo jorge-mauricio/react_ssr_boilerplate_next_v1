@@ -13,6 +13,9 @@ Context refs
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Next components.
+import { AppProps } from 'next/app';
+
 // Custom components.
 // import { SyncSystemNSContext, objContext } from '../components_react/syncsystem-ns-cb-context.js';
 import { SyncSystemNSContextProvider } from '../components_react/syncsystem-ns-cb-context.js';
@@ -28,12 +31,12 @@ import '../app_styles/styles-frontend.css';
 // ----------------------
 
 /**
- * Context Provider.
- * @param {any} Component
- * @param {any} pageProps
- * @return {JsxElement}
+ * App Next.
+ * @param { any } Component
+ * @param { any } pageProps
+ * @return { JsxElement }
  */
-export default function ContextProvider({ Component, pageProps }) {
+ export default function AppNext({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <SyncSystemNSContextProvider>
       <Component {...pageProps} />
@@ -41,7 +44,7 @@ export default function ContextProvider({ Component, pageProps }) {
   );
 };
 
-ContextProvider.propTypes = {
+AppNext.propTypes = {
   Component: PropTypes.elementType,
   pageProps: PropTypes.object,
 };

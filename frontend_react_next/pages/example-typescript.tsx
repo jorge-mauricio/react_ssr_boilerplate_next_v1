@@ -1,11 +1,11 @@
-import type { NextPage } from 'next';
-
-const ExampleTypeScript: NextPage = () => {
+/**
+ * Example typescript.
+ * @return { JsxElement }
+ */
+ export default function ExampleTypeScript(): JSX.Element {
   return (
     <div>
       Hello TypeScript
     </div>
   );
 };
-
-export default ExampleTypeScript;
