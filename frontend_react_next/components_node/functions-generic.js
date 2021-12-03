@@ -2,7 +2,7 @@
 
 // Import Node Modules.
 // ----------------------
-const gSystemConfig = require('../config-application.js'); // System configuration.
+const gSystemConfig = require('../config-application'); // System configuration.
 // ----------------------
 
 module.exports = class FunctionsGeneric {

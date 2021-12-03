@@ -22,7 +22,7 @@ http://fullstackwebdesigner.com
 // ----------------------
 
 // Create a namespace to help export all variables / properties.
-const gSystemConfig = {};
+let gSystemConfig: any = {};
 
 // NodeJS configuration.
 // **************************************************************************************
@@ -355,9 +355,11 @@ gSystemConfig.configSystemMetricDistance = 'KM'; // KM | MI
 // const appLabels = require("./app_resources/language-en-us.js");
 
 // gSystemConfig.languageFrontend = appLabels; // working
-gSystemConfig.configLanguageFrontend = require('./' + gSystemConfig.configDirectoryResources + '/language-en-us.js');
+// gSystemConfig.configLanguageFrontend = require('./' + gSystemConfig.configDirectoryResources + '/language-en-us.js');
+gSystemConfig.configLanguageFrontend = require('./' + gSystemConfig.configDirectoryResources + '/language-en-us');
 // gSystemConfig.languageBackend = appLabels; // working
-gSystemConfig.configLanguageBackend = require('./' + gSystemConfig.configDirectoryResources + '/language-en-us.js');
+// gSystemConfig.configLanguageBackend = require('./' + gSystemConfig.configDirectoryResources + '/language-en-us.js');
+gSystemConfig.configLanguageBackend = require('./' + gSystemConfig.configDirectoryResources + '/language-en-us');
 // **************************************************************************************
 
 // Content - configuration and resources.

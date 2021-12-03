@@ -4,8 +4,9 @@
 Notes:
 \n - line break
 */
+let appLabels: any;
 
-exports.appLabels = {
+appLabels = {
   // Config.
   // **************************************************************************************
   configSiteTile: 'SyncSystem - Multiplatform - SSR Boilerplate - Next',
@@ -331,3 +332,6 @@ exports.appLabels = {
   testOutputDate1: 'Should output date.',
   // **************************************************************************************
 };
+
+// Export module.
+export { appLabels };

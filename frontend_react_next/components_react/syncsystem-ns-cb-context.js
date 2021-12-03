@@ -13,14 +13,14 @@ const qs = require('query-string');
 import Safe from 'react-safe';
 
 // Custom components.
-import { gSystemConfig } from '../config-application.js';
+import { gSystemConfig } from '../config-application';
 
 // Node functions.
-const FunctionsGeneric = require('../' + gSystemConfig.configDirectoryComponents + '/functions-generic.js');
+const FunctionsGeneric = require('../' + gSystemConfig.configDirectoryComponents + '/functions-generic');
 
 // JS functions.
 // import {elementMessage01} from "../app_js/functions-syncsystem.js";
-import { FunctionsSyncSystem } from '../app_js/functions-syncsystem.js';
+import { FunctionsSyncSystem } from '../app_js/functions-syncsystem';
 // ----------------------
 
 // Context.

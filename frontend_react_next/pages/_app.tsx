@@ -18,7 +18,7 @@ import { AppProps } from 'next/app';
 
 // Custom components.
 // import { SyncSystemNSContext, objContext } from '../components_react/syncsystem-ns-cb-context.js';
-import { SyncSystemNSContextProvider } from '../components_react/syncsystem-ns-cb-context.js';
+import { SyncSystemNSContextProvider } from '../components_react/syncsystem-ns-cb-context';
 
 // CSS styles (third party).
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap.
@@ -32,8 +32,8 @@ import '../app_styles/styles-frontend.css';
 
 /**
  * App Next.
- * @param { any } Component
- * @param { any } pageProps
+ * @param { JsxElement } Component
+ * @param { object } pageProps
  * @return { JsxElement }
  */
  export default function AppNext({ Component, pageProps }: AppProps): JSX.Element {

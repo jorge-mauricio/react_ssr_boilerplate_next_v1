@@ -91,7 +91,8 @@
     "**/*tsx"
   ],
   "exclude": [
-    "node_modules" // already default, if this line is not included
+    "node_modules", // already default, if this line is not included
+    "root_backup"
     // "*.dev.ts"
   ],
 }
