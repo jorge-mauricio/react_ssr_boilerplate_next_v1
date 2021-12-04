@@ -26,7 +26,7 @@ let gSystemConfig: any = {};
 
 // NodeJS configuration.
 // **************************************************************************************
-gSystemConfig.configDebug = true; // true (debug mode) | false (production mode)
+gSystemConfig.configDebug = false; // true (debug mode) | false (production mode)
 // **************************************************************************************
 
 // General configuration.

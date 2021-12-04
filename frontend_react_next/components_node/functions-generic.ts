@@ -54,20 +54,32 @@ module.exports = class FunctionsGeneric {
     let strReturn = strContent;
     // ----------------------
 
-    // db
+    // Data treatment.
     // ----------------------
-    if (specialInstructions.includes('db') === true) {
-      if (strReturn) {
-        // Convert line breaks to html br tags.
-        strReturn = strReturn.replace(/(?:\r\n|\r|\n)/g, '<br />');
-      }
+    if (strReturn === undefined || strReturn === null) {
+      strReturn = '';
     }
     // ----------------------
 
-    // config-application
+    // Logic.
     // ----------------------
-    if (specialInstructions.includes('config-application') === true) {
-      strReturn = strReturn;
+    if (specialInstructions) {
+      // db
+      // ----------------------
+      if (specialInstructions.includes('db') === true) {
+        if (strReturn) {
+          // Convert line breaks to html br tags.
+          strReturn = strReturn.replace(/(?:\r\n|\r|\n)/g, '<br />');
+        }
+      }
+      // ----------------------
+
+      // config-application
+      // ----------------------
+      if (specialInstructions.includes('config-application') === true) {
+        strReturn = strReturn;
+      }
+      // ----------------------
     }
     // ----------------------
 
