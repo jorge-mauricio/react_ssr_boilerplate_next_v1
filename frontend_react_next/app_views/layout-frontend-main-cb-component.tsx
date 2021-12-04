@@ -22,7 +22,7 @@ import nProgress from 'nprogress';
 
 // Router hooks.
 // ----------------------
-Router.onRouteChangeStart = (url) => {
+Router.onRouteChangeStart = (url: string) => {
   // Debug.
   // console.log('url=', url);
 
@@ -38,11 +38,24 @@ Router.onRouteChangeError = () => {
 };
 // ----------------------
 
+// Interfaces / types.
+interface ILayoutFrontendMainProps {
+  props?: object,
+  context?: any,
+  query?: object,
+  titleCurrent?: string,
+  cphBody?: object,
+  
+}
+
+interface ILayoutFrontendMainState {
+  dataLoaded?: boolean,
+}
 
 /**
  * Layout Frontend Component.
  */
-class LayoutFrontendMain extends React.Component {
+class LayoutFrontendMain extends React.Component<ILayoutFrontendMainProps, ILayoutFrontendMainState> {
   // Context.
   static contextType = SyncSystemNSContext;
 
@@ -56,11 +69,11 @@ class LayoutFrontendMain extends React.Component {
   // Constructor.
   // **************************************************************************************
   /**
-   * @param {any} props
-   * @param {any} context
+   * @param { any } props
+   * @param { any } context
    * Constructor.
    */
-  constructor(props, context) {
+  constructor(props: any, context: any) {
     super(props, context);
   }
   // **************************************************************************************
@@ -69,9 +82,9 @@ class LayoutFrontendMain extends React.Component {
   // **************************************************************************************
   /**
    * Render output.
-   * @return {JsxElement}
+   * @return { JsxElement }
    */
-  render() {
+  render(): JSX.Element {
     // Variables.
     // ----------------------
     // const SyncSystemNSContext = useSyncSystemNSContext(); // Context (using hooks).

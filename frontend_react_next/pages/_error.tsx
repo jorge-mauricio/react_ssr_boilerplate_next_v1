@@ -19,6 +19,7 @@ import FrontendError from '../components_react/frontend-error-cb-component';
 interface IErrorProps {
   props?: object,
   context?: any,
+  cphBody?: JSX.Element
 }
 
 interface IErrorState {
