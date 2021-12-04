@@ -163,6 +163,11 @@ class LayoutFrontendMain extends React.Component<ILayoutFrontendMainProps, ILayo
                   Example Listing (dynamic)
                 </a>
               </Link>
+              <Link href='/page-doesnt-exist'>
+                <a className="ss-frontend-link01" title="Example Listing">
+                  Error page
+                </a>
+              </Link>
             </nav>
           </header>
 

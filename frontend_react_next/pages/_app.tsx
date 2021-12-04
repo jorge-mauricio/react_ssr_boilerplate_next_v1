@@ -22,7 +22,7 @@ import { SyncSystemNSContextProvider } from '../components_react/syncsystem-ns-c
 
 // CSS styles (third party).
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap.
-import '../app_js/nprogress/nprogress.min.css'; // nProgress CSS.
+import '../app_styles/nprogress/nprogress.min.css'; // nProgress CSS.
 
 // CSS styles (custom).
 // import '../static/app_styles/styles-frontend.css';

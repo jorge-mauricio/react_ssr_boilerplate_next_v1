@@ -2,7 +2,7 @@
 
 // Import Node Modules.
 // ----------------------
-const gSystemConfig = require('../config-application'); // System configuration.
+import { gSystemConfig } from '../config-application'; // System configuration.
 // ----------------------
 
 module.exports = class FunctionsGeneric {
@@ -11,31 +11,27 @@ module.exports = class FunctionsGeneric {
   /**
    * Return the label in the right terminal.
    * @static
-   * @param {object} objAppLabels
-   * @param {string} labelName
-   * @returns {string}
+   * @param { object } objAppLabels
+   * @param { string } labelName
+   * @returns { string }
    * @example
-   * SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageBackend.appLabels, "labelName")
+   * SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageBackend.appLabels, 'labelName')
    */
-  static appLabelsGet(objAppLabels, labelName) {
+  static appLabelsGet(objAppLabels: object, labelName: string): string {
     // Variables.
     // ----------------------
     let strReturn = '';
     // ----------------------
 
-    if (labelName != null && labelName !== '' && typeof labelName !== 'undefined' && objAppLabels !== null && objAppLabels !== '' && typeof objAppLabels !== 'undefined') {
+    if (labelName != null && labelName !== '' && typeof labelName !== 'undefined' && objAppLabels !== null && typeof objAppLabels !== 'undefined') {
       if (objAppLabels.hasOwnProperty(labelName)) {
-        // check if object as property
+        // Check if object as property.
         strReturn = objAppLabels[labelName];
         strReturn = strReturn.replace(/(?:\r\n|\r|\n)/g, '<br />');
       }
-      // strReturn = "test app label"; // debug.
     } else {
       strReturn = '';
     }
-
-    // Debug.
-    // strReturn = objAppLabels;
 
     return strReturn;
   }
@@ -46,15 +42,13 @@ module.exports = class FunctionsGeneric {
   /**
    * Data treatment for displaying information.
    * @static
-   * @param {string} strContent
-   * @param {string} specialInstructions
-   * @return {string}
+   * @param { string } strContent
+   * @param { string } specialInstructions db | utf8_encode | htmlentities | config-application | env (.env - environment variables) | pdf (convert to text) | json_encode (JavaScript String Encode) | url | linkStyle=ss-backend-links01
+   * @return { string }
    * @example
-   *
+   * SyncSystemNS.FunctionsGeneric.contentMaskRead('db', 'configSiteTile');
    */
-  static contentMaskRead(strContent, specialInstructions = '') {
-    // specialInstructions: db | utf8_encode | htmlentities | config-application | env (.env - environment variables) | pdf (convert to text) | json_encode (JavaScript String Encode) | url | linkStyle=ss-backend-links01
-
+  static contentMaskRead(strContent: string, specialInstructions: string = ''): string {
     // Variables.
     // ----------------------
     let strReturn = strContent;
@@ -64,11 +58,7 @@ module.exports = class FunctionsGeneric {
     // ----------------------
     if (specialInstructions.includes('db') === true) {
       if (strReturn) {
-        // strReturn = strContent;
-
         // Convert line breaks to html br tags.
-        // ref: https:// stackoverflow.com/questions/784539/how-do-i-replace-all-line-breaks-in-a-string-with-br-tags
-        // strReturn = strContent.replace(/(?:\r\n|\r|\n)/g, "<br />");
         strReturn = strReturn.replace(/(?:\r\n|\r|\n)/g, '<br />');
       }
     }
@@ -76,9 +66,7 @@ module.exports = class FunctionsGeneric {
 
     // config-application
     // ----------------------
-    // if(specialInstructions == "config-application")
     if (specialInstructions.includes('config-application') === true) {
-      // strReturn = strContent;
       strReturn = strReturn;
     }
     // ----------------------
