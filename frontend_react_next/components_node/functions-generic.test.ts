@@ -6,14 +6,15 @@
 //import { SyncSystemNS } from "./syncsystem-ns";
 
 const { gSystemConfig } = require("../config-application"); //System configuration.
-const { SyncSystemNS } = require("./syncsystem-ns"); //Node JS import method supported by jest.
+// const FunctionsGeneric = require("./functions-generic"); //Node JS import method supported by jest.
+const SyncSystemNS = require("./syncsystem-ns"); //Node JS import method supported by jest.
 // ----------------------
 
 //appLabelsGet unit test.
 //**************************************************************************************
 //With data.
 test("SyncSystemNS.FunctionsGeneric.appLabelsGet: " + 
-    SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageBackend.appLabels, "testOutputString1") + " (Development).", ()=>{
+SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageBackend.appLabels, "testOutputString1") + " (Development)", ()=>{
     //Test with data full.
     //----------------------
     //Build the test.
@@ -62,3 +63,5 @@ test("SyncSystemNS.FunctionsGeneric.appLabelsGet: " +
     //----------------------
 });
 //**************************************************************************************
+
+export {};
