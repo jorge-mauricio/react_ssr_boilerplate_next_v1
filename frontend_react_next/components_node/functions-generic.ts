@@ -1,6 +1,6 @@
 'use strict';
 
-// Import Node Modules.
+// Import modules.
 // ----------------------
 import { gSystemConfig } from '../config-application'; // System configuration.
 // ----------------------
