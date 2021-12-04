@@ -4,12 +4,12 @@
 // ----------------------
 // Context.
 // import { useContext } from "react";
-import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
+import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context';
 // import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
 
 // Components - react.
 // import { gSystemConfig } from '../config-application.js';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // Components - next.

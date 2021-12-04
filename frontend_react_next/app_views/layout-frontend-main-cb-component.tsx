@@ -4,7 +4,7 @@
 // ----------------------
 // Context.
 // import { useSyncSystemNSContext, SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
-import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context.js';
+import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-context';
 
 // Components - react.
 import React from 'react';

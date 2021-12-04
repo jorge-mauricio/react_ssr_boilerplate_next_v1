@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 // Node modules.
 import HTMLReactParser from 'html-react-parser'; // error / webpack
-const qs = require('query-string');
+// const qs = require('query-string');
 import Safe from 'react-safe';
 
 // Custom components.
@@ -23,14 +23,30 @@ const FunctionsGeneric = require('../' + gSystemConfig.configDirectoryComponents
 import { FunctionsSyncSystem } from '../app_js/functions-syncsystem';
 // ----------------------
 
+// Interfaces.
+interface ISyncSystemNSContextProviderProps {
+  props?: object,
+  context?: any,
+  query?: object,
+}
+
+interface ISyncSystemNSContextProviderState {
+  HTMLReactParser?: any,
+  Safe?: any,
+  gSystemConfig?: any,
+  FunctionsSyncSystem?: any,
+  SyncSystemNS?: any,
+  frontendHomeLoaded?: any,
+}
+
 // Context.
 // export const SyncSystemNSContext = createContext();
-export const SyncSystemNSContext = createContext();
+export const SyncSystemNSContext = createContext(null);
 
 /**
  * Context provider "namespace".
  */
-export class SyncSystemNSContextProvider extends React.Component {
+export class SyncSystemNSContextProvider extends React.Component<ISyncSystemNSContextProviderProps, ISyncSystemNSContextProviderState> {
   // Props validation.
   static propTypes = {
     children: PropTypes.element,
@@ -40,7 +56,7 @@ export class SyncSystemNSContextProvider extends React.Component {
     // Modules and components.
     HTMLReactParser: HTMLReactParser,
     Safe: Safe,
-    qs: qs,
+    // qs: qs,
 
     // App config file.
     gSystemConfig: gSystemConfig,
@@ -78,8 +94,8 @@ export class SyncSystemNSContextProvider extends React.Component {
 // Export useSyncSystemNSContext Hook.
 /**
  * ContextProvider.
- * @return {JsxElement}
+ * @return { JsxElement }
  */
-export function useSyncSystemNSContext() {
+export function useSyncSystemNSContext(): JSX.Element {
   return useContext(SyncSystemNSContext);
-}
+};
