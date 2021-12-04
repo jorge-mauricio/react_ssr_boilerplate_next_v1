@@ -33,7 +33,7 @@ gSystemConfig.configDebug = false; // true (debug mode) | false (production mode
 // **************************************************************************************
 // Basic information.
 // ----------------------
-gSystemConfig.configSystemClientName = 'Planejamento Visual';
+gSystemConfig.configSystemClientName = 'SyncSystem';
 gSystemConfig.configSystemClientDocument = ''; // SSN | CPF
 gSystemConfig.configSystemClientCompanyNameLegal = '';
 gSystemConfig.configSystemClientCompanyDocument = ''; // CPNJ
@@ -56,19 +56,18 @@ gSystemConfig.configSystemClientEmail = 'contact@domain.com';
 gSystemConfig.configDevSite = 'http://www.fullstackwebdesigner.com';
 gSystemConfig.configCopyrightYear = '2021';
 
-// gSystemConfig.configSystemURL = "http:// localhost:3000"; // http:// multiplatformv1.syncsystem.com.br
-gSystemConfig.configSystemURL = process.env.CONFIG_SYSTEM_URL; // http:// multiplatformv1.syncsystem.com.br
-// gSystemConfig.configSystemURL = process.env.REACT_APP_CONFIG_SYSTEM_URL; // http:// multiplatformv1.syncsystem.com.br
-// gSystemConfig.configSystemURL = window.location.origin; // http:// multiplatformv1.syncsystem.com.br
-// gSystemConfig.configSystemURLSSL = "http:// localhost:3000"; // http:// multiplatformv1.syncsystem.com.br
-gSystemConfig.configSystemURLSSL = process.env.CONFIG_SYSTEM_URL_SSL; // http:// multiplatformv1.syncsystem.com.br
-// gSystemConfig.configSystemURLSSL = process.env.REACT_APP_CONFIG_SYSTEM_URL_SSL; // http:// multiplatformv1.syncsystem.com.br
-// gSystemConfig.configSystemURLSSL = window.location.origin; // http:// multiplatformv1.syncsystem.com.br
+// gSystemConfig.configSystemURL = "http://localhost:3000"; // http://multiplatformv1.syncsystem.com.br
+gSystemConfig.configSystemURL = process.env.CONFIG_SYSTEM_URL; // http://multiplatformv1.syncsystem.com.br
+// gSystemConfig.configSystemURL = process.env.REACT_APP_CONFIG_SYSTEM_URL; // http://multiplatformv1.syncsystem.com.br
+// gSystemConfig.configSystemURLSSL = "http://localhost:3000"; // http://multiplatformv1.syncsystem.com.br
+gSystemConfig.configSystemURLSSL = process.env.CONFIG_SYSTEM_URL_SSL; // http://multiplatformv1.syncsystem.com.br
+// gSystemConfig.configSystemURLSSL = process.env.REACT_APP_CONFIG_SYSTEM_URL_SSL; // http://multiplatformv1.syncsystem.com.br
+// gSystemConfig.configSystemURLSSL = window.location.origin; // http://multiplatformv1.syncsystem.com.br
 
 gSystemConfig.configAPIURL = gSystemConfig.configSystemURLSSL; // process.env.CONFIG_API_URL;
-gSystemConfig.configURLFrontendReact = process.env.CONFIG_URL_FRONTEND_REACT;
+gSystemConfig.configURLFrontendReact = process.env.NEXT_APP_CONFIG_URL_FRONTEND_REACT; //NEXT_APP_CONFIG_URL_FRONTEND_REACT | NEXT_APP_URL_FRONTEND_REACT
 
-gSystemConfig.configSystemURLImages = '/'; // ".." = relative path | "/" = root | http:// www.nomedodominio.com.br = absolute path | remote (AWS s3): https:// multiplatformnodev1.s3.sa-east-1.amazonaws.com (note: gSystemConfig.configDirectoryFilesSD has to be "")
+gSystemConfig.configSystemURLImages = '/'; // ".." = relative path | "/" = root | http://www.nomedodominio.com.br = absolute path | remote (AWS s3): https:// multiplatformnodev1.s3.sa-east-1.amazonaws.com (note: gSystemConfig.configDirectoryFilesSD has to be "")
 // gSystemConfig.configSystemURLImages = "https:// multiplatformnodev1.s3.sa-east-1.amazonaws.com";
 //gSystemConfig.configSystemURLImagesRemote = 'https://multiplatformnodev1.s3.sa-east-1.amazonaws.com'; // maybe it´s not needed
 gSystemConfig.configFrontendReactURLImages = gSystemConfig.configSystemURL + '/';

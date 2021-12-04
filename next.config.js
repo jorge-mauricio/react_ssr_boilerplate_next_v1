@@ -32,6 +32,7 @@ module.exports = {
   env: {
     // System configuration.
     NEXT_APP_CONFIG_PORT: '3002',
+    NEXT_APP_CONFIG_URL_FRONTEND_REACT: 'http://localhost:3002',
     CONFIG_SYSTEM_URL: 'http://localhost:3002',
     CONFIG_SYSTEM_URL_SSL: 'http://localhost:3002',
   },

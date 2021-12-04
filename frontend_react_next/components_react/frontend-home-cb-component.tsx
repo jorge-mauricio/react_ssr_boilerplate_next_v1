@@ -291,7 +291,7 @@ class FrontendHome extends React.Component<IFrontendHomeProps, IFrontendHomeStat
       // this.metaKeywords = SyncSystemNS.FunctionsGeneric.removeHTML01(this.objCategoriesCurrent.ocdRecord.tblCategoriesKeywordsTags); // Bellow 60 characters.
       this.metaKeywords = SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configSiteKeywords'); // Bellow 60 characters.
 
-      this.metaURLCurrent = gSystemConfig.configSystemURL + '/';
+      this.metaURLCurrent = gSystemConfig.configURLFrontendReact + '/';
 
       // this.objCategoriesHomeListing = this.objCategoriesHomeJson.oclRecords; // working
       // this.arrCategoriesHomeListing = this.objCategoriesHomeJson.oclRecords.resultsCategoriesListing; // working
@@ -301,7 +301,7 @@ class FrontendHome extends React.Component<IFrontendHomeProps, IFrontendHomeStat
 
       // Debug.
       if (gSystemConfig.configDebug === true) {
-        console.log('gSystemConfig.configSystemURL=', gSystemConfig.configSystemURL);
+        console.log('gSystemConfig.configURLFrontendReact=', gSystemConfig.configURLFrontendReact);
         // console.log('process.env.REACT_APP_CONFIG_SYSTEM_URL=', process.env.REACT_APP_CONFIG_SYSTEM_URL);
         // console.log('process.env.NEXT_PUBLIC_CONFIG_PORT=', process.env.NEXT_PUBLIC_CONFIG_PORT);
         // console.log('process.env.NEXT_PUBLIC_CONFIG_PORT=', process.env.NEXT_PUBLIC_CONFIG_PORT);
@@ -355,9 +355,9 @@ class FrontendHome extends React.Component<IFrontendHomeProps, IFrontendHomeStat
 
     // if(this.objCategoriesCurrent.ocdRecord.tblCategoriesImageMain != "")
     // {
-    // document.querySelector('meta[property="og:image"]').setAttribute("content", gSystemConfig.configSystemURL + "/" +  gSystemConfig.configDirectoryFilesSD + "/" + this.objCategoriesCurrent.ocdRecord.tblCategoriesImageMain);
+    // document.querySelector('meta[property="og:image"]').setAttribute("content", gSystemConfig.configURLFrontendReact + "/" +  gSystemConfig.configDirectoryFilesSD + "/" + this.objCategoriesCurrent.ocdRecord.tblCategoriesImageMain);
     // }else{
-    document.querySelector('meta[property="og:image"]').setAttribute('content', gSystemConfig.configSystemURL + '/' + gSystemConfig.configDirectoryFilesLayoutSD + '/' + 'icon-logo-og.png');
+    document.querySelector('meta[property="og:image"]').setAttribute('content', gSystemConfig.configURLFrontendReact + '/' + gSystemConfig.configDirectoryFilesLayoutSD + '/' + 'icon-logo-og.png');
     // }
     // document.querySelector('meta[property="og:image:secure_url"]').setAttribute("content", "Example with image url secure");
     document.querySelector('meta[property="og:image:alt"]').setAttribute('content', this.metaTitle);
@@ -455,7 +455,7 @@ class FrontendHome extends React.Component<IFrontendHomeProps, IFrontendHomeStat
           <meta property="og:url" content={ this.metaURLCurrent } />
           <meta property="og:description" content={ this.metaDescription } />
 
-          <meta property="og:image" content={ gSystemConfig.configSystemURL + '/' + gSystemConfig.configDirectoryFilesLayoutSD + '/' + 'icon-logo-og.png' } />
+          <meta property="og:image" content={ gSystemConfig.configURLFrontendReact + '/' + gSystemConfig.configDirectoryFilesLayoutSD + '/' + 'icon-logo-og.png' } />
           <meta property="og:image:alt" content={ this.metaTitle } />
 
           <meta property="og:locale" content={ SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configFrontendLanguage') } />

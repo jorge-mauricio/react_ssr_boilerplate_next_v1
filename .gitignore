@@ -5,6 +5,7 @@
 
 #Secret information file.
 .env
+.env.local
 .env_export
 .env.prod
 
