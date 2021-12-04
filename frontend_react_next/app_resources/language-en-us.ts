@@ -9,13 +9,12 @@ let appLabels: any;
 appLabels = {
   // Config.
   // **************************************************************************************
-  configSiteTile: 'SyncSystem - Multiplatform - SSR Boilerplate - Next',
-  configSiteDescription: 'Boiler plate for React / Next.',
-  configSiteKeywords: 'web development, react, next, server side rendering',
+  configSiteTile: 'SyncSystem - Multiplatform - React / Next SSR / TypeScript Boilerplate',
+  configSiteDescription: 'Boiler plate for React / Next / TypeScript.',
+  configSiteKeywords: 'web development, react, next, server side rendering, typescript',
 
   configFrontendLanguage: 'en_US', // en_US | pt_BR
 
-  //layoutSystemName: 'Content Management System', // Sistema de Gerenciamento de Conteúdo | Content Management System
   layoutDevName: 'Full Stack Web Designer - JM - Jorge Mauricio',
   // **************************************************************************************
 
