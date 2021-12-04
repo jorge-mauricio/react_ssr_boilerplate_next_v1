@@ -307,6 +307,9 @@ appLabels = {
 
   // DB error.
   statusMessageError50: 'Error 050 - error reading data base.',
+
+  // URL Status code.
+  statusMessageError404: 'Error 404 - page not found.',
   // **************************************************************************************
 
   // Frontend - Home.

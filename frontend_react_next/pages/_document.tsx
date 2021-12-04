@@ -9,7 +9,8 @@ import React, { ReactElement } from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 // ----------------------
 
-interface IProps {
+// Interfaces.
+interface IDocumentProps {
   props?: any,
   context?: any,
 }
@@ -17,7 +18,7 @@ interface IProps {
 /**
  * Document object as base for all HTML pages.
  */
-class DocumentLayoutFrontendMain extends Document<IProps> {
+class AppDocument extends Document<IDocumentProps> {
   // Constructor.
   // **************************************************************************************
   /**
@@ -51,4 +52,4 @@ class DocumentLayoutFrontendMain extends Document<IProps> {
   // **************************************************************************************
 };
 
-export default DocumentLayoutFrontendMain;
+export default AppDocument;

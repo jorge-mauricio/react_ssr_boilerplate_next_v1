@@ -178,15 +178,15 @@ class LayoutFrontendMain extends React.Component {
           <footer>
             {/* Credits. */}
             <small className="ss-frontend-copyright ss-frontend-credit-layout">
-              {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutCopyright')} ©&nbsp;
-              {gSystemConfig.configCopyrightYear}&nbsp;
-              {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configSiteTile')}.&nbsp;
-              {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutCopyright1')}
+              { SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutCopyright') } ©&nbsp;
+              { gSystemConfig.configCopyrightYear }&nbsp;
+              { SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configSiteTile') }.&nbsp;
+              { SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutCopyright1') }
 
               {/* Development. */}
               <a href={gSystemConfig.configDevSite} target="_blank" rel="noreferrer" className="ss-frontend-credit" style={{ float: 'right' }}>
-                {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutDevelopment')}:&nbsp;
-                {SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutDevName')}
+                { SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutDevelopment') }:&nbsp;
+                { SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'layoutDevName') }
               </a>
             </small>
           </footer>
