@@ -41,19 +41,19 @@ class ExampleListing extends React.Component<IExampleListingProps, IExampleListi
   // Context.
   static contextType = SyncSystemNSContext;
 
+  // Props validation.
+  static propTypes = {
+    query: PropTypes.object,
+  };
+
   /**
    * @param {any} query
    * @return {object}
    * Access query strings.
   */
-  static getInitialProps({ query }: NextPageContext) {
+   static async getInitialProps({ query }: NextPageContext): Promise<object> {
     return ({ query });
   }
-
-  // Props validation.
-  static propTypes = {
-    query: PropTypes.object,
-  };
 
   // Constructor.
   // **************************************************************************************

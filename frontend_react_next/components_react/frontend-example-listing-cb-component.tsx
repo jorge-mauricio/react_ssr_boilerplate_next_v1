@@ -9,31 +9,55 @@ import { SyncSystemNSContext } from '../components_react/syncsystem-ns-cb-contex
 
 // Components - react.
 // import { gSystemConfig } from '../config-application.js';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import PropTypes from 'prop-types';
 
 // Components - next.
 import Head from 'next/head';
 // import Link from 'next/link';
+import fetch from 'isomorphic-fetch';
 
 // Components - custom.
 // ----------------------
 
-/**
- * Frontend Home Component.
- */
-class FrontendHome extends React.Component {
-  // Context.
-  static contextType = SyncSystemNSContext;
+// Interfaces / types.
+interface IFrontendExampleListingProps {
+  props?: object,
+  context?: any,
+  query?: object
+}
 
-  /**
-   * @param {any} query
-   * @return {object}
-   * Access query strings.
-  */
-  static getInitialProps({ query }) {
-    return ({ query });
-  }
+interface IFrontendExampleListingState {
+  arrApiListingResponseJson?: any,
+  dataLoaded?: boolean,
+}
+
+/**
+ * Frontend Example Listing Component.
+ */
+class FrontendExampleListing extends React.Component<IFrontendExampleListingProps, IFrontendExampleListingState> {
+  // Properties.
+  // ----------------------
+  objParametersQueryString: any;
+  configLayoutType: number;
+
+  _masterPageFrontendSelect: string;
+
+  _messageSuccess: string;
+  _messageError: string;
+  _messageAlert: string;
+
+  queryDefault: string;
+
+  titleCurrent: string;
+
+  metaTitle: string;
+  metaDescription: string;
+  metaKeywords: string;
+  metaURLCurrent: string;
+
+    // Context.
+  static contextType = SyncSystemNSContext;
 
   // Props validation.
   static propTypes = {
@@ -43,11 +67,11 @@ class FrontendHome extends React.Component {
   // Constructor.
   // **************************************************************************************
   /**
-   * @param {any} props
-   * @param {any} context
+   * @param { any } props
+   * @param { any } context
    * Constructor.
    */
-  constructor(props, context) {
+  constructor(props: any, context: any) {
     // Component options.
     // configLayoutType: 1 - div layout (custom) | 11 - div layout (bootstrap) | 111 - responsive
 
@@ -85,11 +109,11 @@ class FrontendHome extends React.Component {
     // Value definition - props parameters.
     // ----------------------
     /*
-        if(this.props.match.params.idParentCategories)
-        {
-            this._idParentCategories = this.props.match.params.idParentCategories;
-        }
-        */
+    if(this.props.match.params.idParentCategories)
+    {
+        this._idParentCategories = this.props.match.params.idParentCategories;
+    }
+    */
     // ----------------------
 
     // Value definition - query string.
@@ -158,9 +182,9 @@ class FrontendHome extends React.Component {
   // **************************************************************************************
   /**
    * Lifecycle method.
-   * @return {void}
+   * @return { void }
    */
-  async componentDidMount() {
+  async componentDidMount(): Promise<void> {
     // Variables.
     // ----------------------
     // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem, qs } = this.context;
@@ -222,13 +246,16 @@ class FrontendHome extends React.Component {
   // **************************************************************************************
   /**
    * Build object´s content.
-   * @return {void}
+   * @return { void }
    */
-  async build() {
+  async build(): Promise<void> {
     // Variables.
     // ----------------------
     // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context; // Deconstruct variables (each variable is allocated to it´s correspondent name).
     const { gSystemConfig, SyncSystemNS } = this.context;
+
+    let apiListingResponse: any;
+    let arrApiListingResponseJson: object;
 
     // let apiURLCategoriesHomeListing = ''; // working
     // let apiCategoriesHomeListingResponse; // working
@@ -241,10 +268,16 @@ class FrontendHome extends React.Component {
     // ----------------------
     /**/
     try {
+      // Fetch API.
+      apiListingResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
+      arrApiListingResponseJson = await apiListingResponse.json();
+
+
       // Value definition.
       // this.titleCurrent = this.objCategoriesCurrent.tblCategoriesTitle;
       // this.titleCurrent = SyncSystemNS.FunctionsGeneric.removeHTML01(this.objCategoriesCurrent.ocdRecord.tblCategoriesTitle);
-      this.titleCurrent = SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'frontendHomeTitleMain');
+      // this.titleCurrent = SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'frontendHomeTitleMain');
+      this.titleCurrent = 'Example Listing';
       // console.log("this.objCategoriesCurrent=",this.objCategoriesCurrent);
 
       // idParentCategories = this.props.match.params.idParentCategories;
@@ -278,8 +311,11 @@ class FrontendHome extends React.Component {
       if (gSystemConfig.configDebug === true) {
         console.error(asyncError);
       }
+      arrApiListingResponseJson = [];
     } finally {
       // Update state.
+      this.setState({ arrApiListingResponseJson: arrApiListingResponseJson });
+
       // this.setState({ objCategoriesHomeListing: this.objCategoriesHomeListing }); // working
       // this.setState({ arrCategoriesHomeListing: this.arrCategoriesHomeListing }); // working
 
@@ -300,9 +336,9 @@ class FrontendHome extends React.Component {
   // **************************************************************************************
   /**
    * Head build.
-   * @return {void}
+   * @return { void }
    */
-  async headBuild() {
+  async headBuild(): Promise<void> {
     /*
     // Variables.
     const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context; // Deconstruct variables (each variable is allocated to it´s correspondent name).
@@ -348,9 +384,9 @@ class FrontendHome extends React.Component {
   // **************************************************************************************
   /**
    * Current title build.
-   * @return {void}
+   * @return { void }
    */
-  async titleCurrentBuild() {
+  async titleCurrentBuild(): Promise<void> {
     // Variables.
     // ----------------------
     // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem } = this.context; // Deconstruct variables (each variable is allocated to it´s correspondent name).
@@ -367,14 +403,16 @@ class FrontendHome extends React.Component {
   // **************************************************************************************
   /**
    * Render output.
-   * @return {JsxElement}
+   * @return { JsxElement }
    */
-  render() {
+  render(): JSX.Element {
     // Variables.
     // ----------------------
     // const { gSystemConfig, SyncSystemNS, FunctionsSyncSystem, HTMLReactParser, SyncSystemRC } = this.context;
     // const { gSystemConfig, SyncSystemNS, HTMLReactParser, frontendHomeLoaded } = this.context;
     const { gSystemConfig, SyncSystemNS, frontendHomeLoaded } = this.context;
+
+    const { arrApiListingResponseJson } = this.state;
 
     // let objCategoriesHome105; // working
     // let objPublicationsHome236; // working
@@ -384,7 +422,7 @@ class FrontendHome extends React.Component {
     // ----------------------
     if (this.state.dataLoaded === false) {
       if (gSystemConfig.configDebug === true) {
-        console.log('Still loading data (frontend-home-cb-component).');
+        console.log('Still loading data (frontend-example-listing-cb-component).');
       }
 
       /*
@@ -393,6 +431,10 @@ class FrontendHome extends React.Component {
         </SyncSystemRC.FrontendElementsLoading>
       );
       */
+      return (
+        <React.Fragment>
+        </React.Fragment>
+      );
     }
     // ----------------------
 
@@ -401,7 +443,9 @@ class FrontendHome extends React.Component {
     // ----------------------
 
     // Debug.
-    // console.log("this._pagingTotal(inside render)=", this._pagingTotal);
+    if (gSystemConfig.configDebug === true) {
+      console.log('arrApiListingResponseJson=', arrApiListingResponseJson); // working
+    }
 
     // Output.
     return (
@@ -425,11 +469,8 @@ class FrontendHome extends React.Component {
           <meta property="og:locale" content={ SyncSystemNS.FunctionsGeneric.appLabelsGet(gSystemConfig.configLanguageFrontend.appLabels, 'configFrontendLanguage') } />
         </Head>
         <React.Fragment>
-          <h1>
-            Home Page
-          </h1>
           <div>
-            Welcome to the home page 22
+            Example Listing Page
           </div>
 
           <div>
@@ -450,4 +491,4 @@ class FrontendHome extends React.Component {
   // **************************************************************************************
 }
 
-export default FrontendHome;
+export default FrontendExampleListing;

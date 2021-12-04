@@ -48,7 +48,7 @@ class Index extends React.Component<IIndexProps, IIndexState> {
    * @return { object }
    * Access query strings.
   */
-  static async getInitialProps({ query }: NextPageContext) {
+  static async getInitialProps({ query }: NextPageContext): Promise<object> {
     return ({ query });
   }
 

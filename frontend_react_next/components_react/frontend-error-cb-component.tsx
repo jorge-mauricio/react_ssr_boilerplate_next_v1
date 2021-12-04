@@ -38,7 +38,7 @@ interface IErrorState {
 class FrontendError extends React.Component<IErrorProps, IErrorState> {
   // Properties.
   objParametersQueryString: any;
-  configLayoutType = 1;
+  configLayoutType: number;
 
   _masterPageFrontendSelect: string;
 
