@@ -4,7 +4,7 @@
 
 
 #Secret information file.
-.env
+#.env
 .env.local
 .env_export
 .env.prod
@@ -39,6 +39,7 @@ frontend_react_next/pages/backup
 #**************************************************************************************
 #Third party javascript/node.js dependencies.
 node_modules
+package-lock.json
 
 #PHP.
 #**************************************************************************************
